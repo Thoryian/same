@@ -1,98 +1,58 @@
-:root {
-  --background: #0f0f0f;
-  --surface: #1e1e1e;
-  --surface-hover: #2a2a2a;
-  --primary: #404040;
-  --primary-hover: #505050;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --border: #333333;
-  --focus-ring: rgba(255, 255, 255, 0.1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  width: 100%;
-  background-color: var(--background);
-  color: var(--text-primary);
+html, body {
+  background: #0f0f0f;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  min-height: 100vh;
 }
 
 body {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  padding: 1.5rem;
+  gap: 1rem;
 }
 
 select, input, button, textarea {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-size: 15px;
-  transition: all 0.2s ease;
-  width: 100%;
-  max-width: 400px;
-}
-
-input[type="datetime-local"] {
-  width: calc(100% - 100px);
-  margin-right: 12px;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
 }
 
 button {
-  background-color: var(--primary);
+  background: #404040;
   border: none;
   font-weight: 500;
   cursor: pointer;
-  width: auto;
-  min-width: 120px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 44px;
+  min-width: 100px;
+  height: 40px;
 }
 
 button:hover {
-  background-color: var(--primary-hover);
+  background: #505050;
   transform: translateY(-1px);
 }
 
-button:active {
-  transform: translateY(0);
-}
-
 label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--text-secondary);
-  font-size: 14px;
+  color: #a0a0a0;
+  font-size: 0.875rem;
   font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .time-group {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
 }
 
 .time-group select {
@@ -101,86 +61,72 @@ label {
 
 .control-panel {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin: 2rem 0;
-  padding: 1rem;
-  background-color: var(--surface);
-  border-radius: 16px;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #1e1e1e;
+  border-radius: 8px;
 }
 
 table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  margin: 1.5rem 0;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--surface);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  border-radius: 8px;
+  background: #1e1e1e;
 }
 
-table td, table th {
-  padding: 16px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-primary);
-}
-
-table tr:last-child td {
-  border-bottom: none;
+td, th {
+  padding: 0.75rem;
+  border-bottom: 1px solid #333;
 }
 
 .title {
-  background-color: var(--primary);
+  background: #404040;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.entry {
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.2s ease;
-}
-
 .entry:hover {
-  background-color: var(--surface-hover);
+  background: #2a2a2a;
+  cursor: pointer;
 }
 
 #status {
   font-family: Hack, monospace;
-  background-color: var(--surface);
-  padding: 20px;
-  border-radius: 16px;
-  margin: 1rem 0;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
   white-space: pre-wrap;
-  line-height: 1.5;
-  font-size: 14px;
+  line-height: 1.4;
+  font-size: 0.875rem;
 }
 
 input[type="checkbox"] {
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--border);
-  border-radius: 6px;
-  margin-right: 8px;
-  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin-right: 0.5rem;
   cursor: pointer;
   position: relative;
 }
 
 input[type="checkbox"]:checked {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background: #404040;
+  border-color: #404040;
 }
 
 input[type="checkbox"]:checked::after {
   content: "✓";
   position: absolute;
-  color: var(--text-primary);
-  font-size: 14px;
+  color: #fff;
+  font-size: 12px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -189,87 +135,38 @@ input[type="checkbox"]:checked::after {
 .checkbox-group {
   display: flex;
   align-items: center;
-  margin: 12px 0;
-}
-
-.checkbox-group label {
-  margin: 0;
-  cursor: pointer;
+  margin: 0.75rem 0;
 }
 
 select:focus, input:focus, textarea:focus, button:focus {
   outline: none;
-  border-color: var(--text-secondary);
-  box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
-optgroup {
-  color: var(--text-secondary);
-  font-weight: 600;
-  padding: 8px;
-}
-
-option {
-  color: var(--text-primary);
-  background-color: var(--surface);
-  padding: 8px;
-}
-
-a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--text-primary);
-}
-
-#samediv {
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: var(--surface);
-  border-radius: 16px;
+  border-color: #505050;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
 }
 
 textarea {
   width: 100%;
-  min-height: 120px;
+  min-height: 100px;
   font-family: Hack, monospace;
   resize: vertical;
-  line-height: 1.5;
-  margin-top: 8px;
-}
-
-.small {
-  width: 80px !important;
-}
-
-#container tr:last-child td {
-  border-bottom: none;
+  line-height: 1.4;
 }
 
 .locations-group {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.locations-group select {
-  flex: 1;
-  min-width: 150px;
 }
 
 .credits {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: var(--surface);
-  border-radius: 16px;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: #1e1e1e;
+  border-radius: 8px;
   text-align: center;
-  font-size: 14px;
-  color: var(--text-secondary);
+  font-size: 0.875rem;
+  color: #a0a0a0;
 }
 
 @media (max-width: 768px) {
@@ -277,38 +174,21 @@ textarea {
     padding: 1rem;
   }
   
-  .time-group {
+  .time-group, .locations-group, .control-panel {
     flex-direction: column;
-    align-items: flex-start;
   }
   
   input[type="datetime-local"] {
     width: 100%;
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
-  
-  .locations-group {
-    flex-direction: column;
-  }
-  
-  .locations-group select {
-    width: 100%;
+    margin-bottom: 0.75rem;
   }
   
   button {
     width: 100%;
   }
   
-  .control-panel {
-    flex-direction: column;
-  }
-  
-  table {
-    font-size: 14px;
-  }
-  
-  table td, table th {
-    padding: 12px;
+  td, th {
+    padding: 0.625rem;
+    font-size: 0.875rem;
   }
 }
